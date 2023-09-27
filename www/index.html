@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: content: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/motor.js" type="text/javascript"></script>
+</head>
+<body onload="loadedInfo()">
+    <div class="realBody" id="otherBody">
+        <header>
+            <input type="text" id="noteblockTitle" class="bookingTitle" placeholder="✎ Titulo">
+        </header>
+        <main class="protagonist">
+            <label class="invertText">Descrição</label>
+            <label class="blockLine"></label><br>
+            <textarea rows="4" id="noteblock" class="invisibleText"></textarea>
+            <label class="blockLine"></label><br>
+            <label class="invertText">Imagem</label>
+            <label class="blockLine"></label><br>
+            <input type="url" id="customImg" class="txtDesign invisibleText" style="width:97.5%;height:50px">
+            <label class="blockLine"></label><br>
+            <label class="invertText">Anotado</label>
+            <label class="blockLine"></label>
+            <label class="txtDesign invisibleText">Data: <input type="date" id="todayNow"></label>
+            <label class="txtDesign invisibleText">Horário: <input type="time" id="timing"></label>
+            <label class="blockLine"></label><br>
+            <label class="invertText">Prazo</label>
+            <label class="blockLine"></label>
+            <label class="txtDesign invisibleText">Data: <input type="date" id="todayFuture"></label>
+            <label class="txtDesign invisibleText">Horário: <input type="time" id="timeLimit"></label>
+            <label class="blockLine"></label><br>
+        </main>
+        <footer class="tree">
+            <input type="button" onclick="save()" class="salvar" value="Salvar">
+            <input type="button" onclick="copy()" class="copiar" value="Copiar">
+            <input type="button" onclick="clrs()" class="delete" value="Limpar">
+        </footer>
+        <div class="configTab">
+            <label class="invertText">Dark Screen <input type="range" style="width:25%" id="darkMode" onchange="darkTheme()" value="0"></label>
+            <br>
+            <label class="invertText">Color <input type="color" style="width:50%;border:none;" id="cb" value="#FFFFFF"></label>
+            <input type="search" id="finder" class="bookingTitle" onkeyup="finding(value)" placeholder="Pesquisar titulo" style="background-color: rgba(200,200,200,0.5)">
+        </div>
+        <div id="copys">
+        </div>
+    </div>
+</body>
+</html>
